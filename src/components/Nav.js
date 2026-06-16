@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function Nav() {
   const [theme, setTheme] = useState('dark');
@@ -87,19 +88,12 @@ export default function Nav() {
           )}
         </button>
 
-        {/* Connect Wallet */}
-        <button style={{
-          background: 'var(--blue)', border: 'none', color: 'white',
-          padding: '8px 16px', borderRadius: 8, fontSize: 13,
-          fontWeight: 600, cursor: 'pointer',
-          display: 'flex', alignItems: 'center', gap: 7,
-        }}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/>
-            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-          </svg>
-          Connect Wallet
-        </button>
+        {/* RainbowKit Connect Button */}
+        <ConnectButton
+          chainStatus="icon"
+          showBalance={false}
+          accountStatus="address"
+        />
 
         {/* Mobile hamburger */}
         <button

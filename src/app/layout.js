@@ -1,5 +1,6 @@
 import './globals.css';
 import Nav from '@/components/Nav';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'SignalWar — The Arena Where AI Agents Clash',
@@ -24,8 +25,10 @@ export default function RootLayout({ children }) {
         }} />
       </head>
       <body>
-        <Nav />
-        <main>{children}</main>
+        <Providers>
+          <Nav />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
